@@ -79,6 +79,9 @@ var NEATOCAL_PARAM = {
   //
   "month_code": [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ],
 
+  // 
+  "language" : "",
+
   // start month (0 indexed)
   //
   //   Janurary (0) default
@@ -114,6 +117,21 @@ var H = {
     return s;
   }
 };
+
+function localized_day(locale, day_idx) {
+  let iday = 17 + day_idx;
+  let s = '1995-12-' + iday.toString() + 'T12:00:01Z';
+  let d = new Date(s);
+  return d.toLocaleDateString(locale, {"weekday":"short"});
+}
+
+function localized_month(locale, mo_idx) {
+  let imo = 1 + mo_idx;
+  let imo_str = ((imo < 10) ? ("0" + imo.toString()) : imo.toString());
+  let s = '1995-' + imo_str + '-18T12:00:01Z';
+  let d = new Date(s);
+  return d.toLocaleDateString(locale, {"month":"short"});
+}
 
 function neatocal_default() {
   let year      = NEATOCAL_PARAM.year;
@@ -349,7 +367,7 @@ function neatocal_override_param(param, data) {
   let admissible_param = [
     "year", "start_month", "n_month", "layout",
     "start_day", "highlight_color", "weekday_code", "month_code",
-    "cell_height", "help"
+    "cell_height", "language", "help"
   ];
 
   for (let idx = 0; idx < admissible_param.length; idx++) {
@@ -417,6 +435,7 @@ function neatocal_init() {
   let cell_height_param = sp.get("cell_height");
   let weekday_code_param = sp.get("weekday_code");
   let month_code_param = sp.get("month_code");
+  let language_param = sp.get("language");
 
   let datafn_param = sp.get("data");
 
@@ -513,6 +532,24 @@ function neatocal_init() {
     cell_height = cell_height_param;
   }
   NEATOCAL_PARAM.cell_height = cell_height;
+
+  //---
+
+  // language fills out the month/day codes and happens
+  // before so it can be overriden by month day code
+  // specification.
+  //
+  if ((language_param != null) &&
+      (typeof language_param !== "undefined")) {
+
+    for (let day_idx=0; day_idx<7; day_idx++) {
+      NEATOCAL_PARAM.weekday_code[day_idx] = localized_day(language_param, day_idx);
+    }
+
+    for (let mo_idx=0; mo_idx<12; mo_idx++) {
+      NEATOCAL_PARAM.month_code[mo_idx] = localized_month(language_param, mo_idx);
+    }
+  }
 
   //---
 
