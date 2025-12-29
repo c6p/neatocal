@@ -40,6 +40,7 @@ var NEATOCAL_PARAM = {
   },
 
   "color_cell": [],
+  "date_cell": [],
 
   // Putting data in cells can alter the cell/row height,
   // so we allow a user parameter to fiddle with cell height.
@@ -469,6 +470,17 @@ function neatocal_post_process() {
         ele.style.background = `linear-gradient(to right, ${color_cell[i].color} 50%, ${bg} 50%)`;
       } else {
       ele.style.background = color_cell[i].color;
+      }
+    }
+  }
+
+  if ("date_cell" in NEATOCAL_PARAM) {
+    let date_cell = NEATOCAL_PARAM.date_cell;
+
+    for (let i = 0; i < date_cell.length; i++) {
+      let ele = document.querySelector("#ui_" + date_cell[i].date + ">span.day");
+      if ((typeof ele === "undefined") || (ele == null)) { continue; }
+      ele.insertAdjacentHTML('afterend', "<span>" + date_cell[i].text + "</span>");
     }
   }
 }
@@ -508,6 +520,9 @@ function neatocal_override_param(param, data) {
 
   if ("color_cell" in data) {
     param.color_cell = data.color_cell;
+  }
+  if ("date_cell" in data) {
+    param.date_cell = data.date_cell;
   }
 
   return param;
