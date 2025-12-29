@@ -1,0 +1,60 @@
+{
+  "param": {
+    "year": 2026,
+    "start_day": 0,
+    "weekday_code": ["Pz", "Pt", "S", "Ç", "Pe", "Cu", "Ct"],
+    "month_code": [
+      "OCAK",
+      "ŞUBAT",
+      "MART",
+      "NİSAN",
+      "MAYIS",
+      "HAZİRAN",
+      "TEMMUZ",
+      "AĞUSTOS",
+      "EYLÜL",
+      "EKİM",
+      "KASIM",
+      "ARALIK"
+    ],
+
+    "color_cell": [
+      { "date": "2026-01-01", "color": "#ccc" },
+      { "date": "2026-03-19", "color": "#ccc", "half": true },
+      { "date": "2026-03-20", "color": "#ccc" },
+      { "date": "2026-03-21", "color": "#ccc" },
+      { "date": "2026-03-22", "color": "#ccc" },
+      { "date": "2026-04-23", "color": "#ccc" },
+      { "date": "2026-05-01", "color": "#ccc" },
+      { "date": "2026-05-19", "color": "#ccc" },
+      { "date": "2026-05-26", "color": "#ccc", "half": true },
+      { "date": "2026-05-27", "color": "#ccc" },
+      { "date": "2026-05-28", "color": "#ccc" },
+      { "date": "2026-05-29", "color": "#ccc" },
+      { "date": "2026-05-30", "color": "#ccc" },
+      { "date": "2026-07-15", "color": "#ccc" },
+      { "date": "2026-08-30", "color": "#ccc" },
+      { "date": "2026-10-28", "color": "#ccc", "half": true },
+      { "date": "2026-10-29", "color": "#ccc" }
+    ],
+
+    "date_cell": [
+      { "date": "2026-01-01", "text": "🎄" },
+      { "date": "2026-02-19", "text": "🌙" },
+      { "date": "2026-03-20", "text": "🍬" },
+      { "date": "2026-03-21", "text": "🍬" },
+      { "date": "2026-03-22", "text": "🍬" },
+      { "date": "2026-04-23", "text": "🎈" },
+      { "date": "2026-05-01", "text": "👷" },
+      { "date": "2026-05-19", "text": "🏅" },
+      { "date": "2026-05-27", "text": "🐑" },
+      { "date": "2026-05-28", "text": "🐑" },
+      { "date": "2026-05-29", "text": "🐑" },
+      { "date": "2026-05-30", "text": "🐑" },
+      { "date": "2026-07-15", "text": "🛡️" },
+      { "date": "2026-08-30", "text": "⚔️" },
+      { "date": "2026-10-29", "text": "🇹🇷" },
+      { "date": "2026-11-10", "text": "🥀" }
+    ]
+  }
+}
