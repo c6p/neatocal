@@ -52,12 +52,13 @@ td, th {
 	text-transform: uppercase;
 	border-bottom: 1px solid #888;
 	padding: .3vmin .3vmin;
-	font-size: .9vmin;
+	font-size: 1.4vmin;
 	font-weight: 300;
 	color: #000;
 }
 th {
-	font-size: 1.1vmin;
+	font-size: 1.5vmin;
+	font-weight: 500;
 	padding: 0;
 }
 td:empty {
@@ -71,7 +72,7 @@ td:empty {
 	display: inline-block;
 	text-align: center;
 	width: 1em;
-	color: #888;
+	font-size: 1.2vmin;
 }
 .weekend {
 	/* background: #d8d8d8; */

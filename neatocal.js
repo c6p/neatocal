@@ -765,7 +765,7 @@ function neatocal_render() {
     span.style["width"] = (100*year_fraction[idx]).toString() + "%";
     span.style["justify-content"] = "center";
     span.style["text-align"] = "center";
-    span.style["margin"] = "0 0 .5em 0";
+    span.style["margin"] = "0 0 .1em 0";
 
     ui_year.appendChild( span );
   }
