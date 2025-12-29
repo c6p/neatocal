@@ -464,6 +464,10 @@ function neatocal_post_process() {
     for (let i=0; i < color_cell.length; i++) {
       let ele = document.getElementById("ui_" + color_cell[i].date);
       if ((typeof ele === "undefined") || (ele == null)) { continue; }
+      if (color_cell[i]?.half) {
+        let bg = window.getComputedStyle(ele).backgroundColor;
+        ele.style.background = `linear-gradient(to right, ${color_cell[i].color} 50%, ${bg} 50%)`;
+      } else {
       ele.style.background = color_cell[i].color;
     }
   }
